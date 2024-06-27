@@ -1,7 +1,8 @@
 #!/bin/bash
 
-#this is my own personnal path, you will have to change this !
-PATH_FILES="/home/tfreydie/projects/random imports/Innit_script/"
+#Dark magic to get the path of the
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
 
 if [ $# -eq 0 ]; then
 	echo "No arguments supplied, please supply a number"
@@ -15,9 +16,9 @@ while [ $i -lt $max_count ]; do
 
     mkdir ex0$i
     cd ex0$i
-    cp -r "$PATH_FILES/sources" "$PWD" 
-    cp -r "$PATH_FILES/includes" "$PWD"
-    cp "$PATH_FILES/Makefile" "$PWD"
+    cp -r "$SCRIPT_DIR/sources" "$PWD" 
+    cp -r "$SCRIPT_DIR/includes" "$PWD"
+    cp "$SCRIPT_DIR/Makefile" "$PWD"
     cd ..
     ((i++))
 done
