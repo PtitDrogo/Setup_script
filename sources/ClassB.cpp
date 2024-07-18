@@ -2,8 +2,14 @@
 #include <iostream>
 
 ClassB::ClassB() : _x(0), _y(0) {}
-ClassB::ClassB(int a, int b) : _x(a), _y(b) {}
-ClassB::ClassB(ClassB& other) : _x(other.getX()), _y(other.getY()) {}
+ClassB::ClassB(int a, int b) : 
+    _x(a), 
+    _y(b) 
+    {}
+ClassB::ClassB(ClassB& other) : 
+    _x(other.getX()), 
+    _y(other.getY()) 
+    {}
 ClassB::~ClassB() {}
 
 ClassB& ClassB::operator=(const ClassB& other)
@@ -22,6 +28,6 @@ int ClassB::getY() const { return _y; }
 
 std::ostream    &operator<<(std::ostream &out, ClassB const &fixed)
 {
-    std::cout << "X is " << fixed.getX() << " Y is " << fixed.getY();
+    out << "X is " << fixed.getX() << " Y is " << fixed.getY();
     return (out);
 }
