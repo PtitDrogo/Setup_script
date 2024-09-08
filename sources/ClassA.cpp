@@ -6,7 +6,7 @@ ClassA::ClassA(int a, int b) :
     _x(a), 
     _y(b) 
     {}
-ClassA::ClassA(ClassA& other) : 
+ClassA::ClassA(const ClassA& other) : 
     _x(other.getX()), 
     _y(other.getY()) 
     {}
@@ -16,8 +16,8 @@ ClassA& ClassA::operator=(const ClassA& other)
 {
     if (this != &other)
     {
-        this->_x = getX();
-        this->_y = getY();
+        this->_x = other.getX();
+        this->_y = other.getY();
     }
     return (*this);
 }

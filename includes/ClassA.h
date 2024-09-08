@@ -8,7 +8,7 @@ private:
 public:
     //Constructors
     ClassA();
-    ClassA(ClassA& other);
+    ClassA(const ClassA& other);
     ClassA(int a, int b);
     
     //Destructors
